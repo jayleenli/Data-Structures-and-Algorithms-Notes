@@ -4,13 +4,13 @@
  - Find all the subsequences, find each subsequence value, and then find the max value of all the possible values. 
 ```
  for i=1 to n
- 	for j=i to n
- 		thisSum = 0
- 		for k = i to j
- 			thisSum+= ak //a of k
- 			if thisSum > maxSum
- 				maxSum = thisSum
- return maxSum
+  for j=i to n
+   thisSum = 0
+ 	for k = i to j
+ 	 thisSum+= ak //a of k
+ 	 if thisSum > maxSum
+	  maxSum = thisSum
+return maxSum
 ```
  This algorithm is correct, but it will add numbers over again when not really needed.
  For example, 3, -1, -1, 2
@@ -23,10 +23,10 @@
  for i = 1 to n
  	thisSum = 0
  	for j = i to n
- 		thisSum += ak //a of k
- 		if thisSum > maxSum
- 			maxSum = thisSum
- 			I = i, J= j
+ 	 thisSum += ak //a of k
+ 	 if thisSum > maxSum
+ 		maxSum = thisSum
+ 		I = i, J= j
  return maxSum, I, J
 ```
  Algorithm fixes a start index i then evaluates all subsequences that start at i and end at j = i, i+1...n and computes the sum without recounting numbers.
