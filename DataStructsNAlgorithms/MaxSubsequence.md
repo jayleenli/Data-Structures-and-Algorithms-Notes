@@ -1,8 +1,8 @@
-Notes on the four different ways to solve the Max Subsequence Problem. 
+# Notes on the four different ways to solve the Max Subsequence Problem. 
 
-Method 1: O(n^3)
+## Method 1: O(n^3)
  - Find all the subsequences, find each subsequence value, and then find the max value of all the possible values. 
-
+```
  for i=1 to n
  	for j=i to n
  		thisSum = 0
@@ -11,14 +11,14 @@ Method 1: O(n^3)
  			if thisSum > maxSum
  				maxSum = thisSum
  return maxSum
-
+```
  This algorithm is correct, but it will add numbers over again when not really needed.
  For example, 3, -1, -1, 2
  This method would add the already added together numbers over again.
 
-Method 2: O(n^2)
+## Method 2: O(n^2)
  - Instead of recounting numbers, just add it to thisSum
-
+```
  maxSum = 0; I = J = 0
  for i = 1 to n
  	thisSum = 0
@@ -28,7 +28,7 @@ Method 2: O(n^2)
  			maxSum = thisSum
  			I = i, J= j
  return maxSum, I, J
-
+```
  Algorithm fixes a start index i then evaluates all subsequences that start at i and end at j = i, i+1...n and computes the sum without recounting numbers.
 
  Method 3: O (nlogn)
@@ -51,8 +51,8 @@ Method 2: O(n^2)
 	4. We can find the free (other) endpoint by a simple linear scan: starting at an/2, keep track of the left subsequence sum, and finally return the one with max value. Similarly, for the right anchored subseq.
 	5. Thus, the straddling max subseq. can be found in O(n) time.
 
-Method 4: O(n)
-
+## Method 4: O(n)
+```
  maxSum = 0; thisSum = 0; I=J=0;
  for j = 1 to n
  	thisSum += aj //a of j
@@ -61,7 +61,7 @@ Method 4: O(n)
  	else if thisSum < 0
  		thisSum = 0; I = j+1;
  return maxSum, I, J
-
+```
  This only works because of special reasons of max subsequence.
  1. maxSum can never start with a negative number.
  	This is because you can just take the negative number out, and you will have a greater subsequence than the one before taking the negative number out.

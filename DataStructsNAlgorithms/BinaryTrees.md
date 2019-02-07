@@ -1,8 +1,8 @@
-#Binary Tree Notes
+# Binary Tree Notes
 
 
 
-##Proofs (Induction)
+## Proofs (Induction)
 4. Use induction to prove that the number of leaves in a binary tree of
 height H is at most 2^H.
 
