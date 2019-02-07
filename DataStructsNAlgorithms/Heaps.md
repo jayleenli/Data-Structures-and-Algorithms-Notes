@@ -17,11 +17,11 @@ Let's say that L(n) defines the number of leaves in a heap, where n is the numbe
 Now we are trying to prove inductively 
 ```
 L(n+2) = L(n) + 1
-```
 ceil((n+2)/2) = ceil(n/2 + 1)
 ceil((n+2)/2) = ceil(n/2) + 1, since the ceil of 1 is 1
 L(n+2) = L(n) + 1
 Proof is complete. 
+```
 
 ### Any algorithm to find the max will take the O(n) time
 Max algorithm must check all the nodes to find max.
