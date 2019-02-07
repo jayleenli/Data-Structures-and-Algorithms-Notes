@@ -18,7 +18,7 @@ Basically, can't guarantee that we will hash back to the same location when we t
 
 ### Universal Hashing
 - Prob [h(x) = h(y)] < 1/m for any x,y in U and any h in family of hash function H
-- Expected collisions is <= (n-1)/m. If m=n, then the expected # of collisions is 1. 
+- Expected collisions AT ANY HASH LOCATION is <= (n-1)/m. If m=n, then the expected # of collisions is 1. This is O(n/m).
 
 ### Resolving Collisions
 * Separate Chaining
