@@ -1,0 +1,1 @@
+AVL trees are log n worst case. Always looking for left height - right height. 

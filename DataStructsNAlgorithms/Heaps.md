@@ -31,6 +31,8 @@ Now if we change z to L+1, and run the algorithm again, the heap will return L, 
 Therefore all nodes must be checked to find the max. 
 
 ### D heaps
-Why are they useful? Well it makes the height of the tree shorter, so you have a faster percolate up but a more expensive percolate down
-percolateUp = O(logdN)
-percolateDown = O(dlogdN)
+Why are they useful? Well it makes the height of the tree shorter in height, so you have a faster percolate up but a more expensive percolate down.   
+* percolateUp = O(logdN)   
+* percolateDown = O(dlogdN)   
+* insert = O(logdN)
+* deleteMin = O(dlogdN)
