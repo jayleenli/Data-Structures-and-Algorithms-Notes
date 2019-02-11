@@ -1,2 +1,3 @@
-# Algorithm-Problem-Methods
-Some notes and code for Data Structures and Algorithm practice problems, or just cool Data Structure and Algorithm things.
+# Data Structures and Algorithm Notes
+Some notes and code from CS130a Data Structures and Algorithms @ UCSB.
+This stuff is pretty wild.
