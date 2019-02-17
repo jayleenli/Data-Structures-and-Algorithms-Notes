@@ -100,3 +100,19 @@ T1   P    rightRotate(P)  T1   X     leftRotate(P)    G     P
 * call access (x,t) first, if its not found, the tree just gets restructed. 
 * if it is found, it splayed with x as the root
 * delete the root, join the two remaining left and right subtrees.
+
+
+##  BFS (Breadth-First Search) order
+```
+      tree
+      ----
+       j         <-- level 0
+     /   \
+    f      k     <-- level 1
+  /   \      \
+ a     h      z  <-- level 2
+  \
+   d             <-- level 3
+```
+[j, f, k, a, h, z, d]  
+Basically as if you were going through the tree line by line.
