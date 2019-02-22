@@ -58,6 +58,9 @@ Amortized cost = Ci + change in PE of each state in data structure. (total drop 
 
 Also you must assume that the potential at any stage is at least as big as the beginning state.
 
+So what is a good function to make the starting potential?
+New amortized = Ci - potential at previous operation + potential at current operations.  
+Potential at any point has to be postive! and always bigger than the initial potential! 
   
 ### So how this relate to the splay tree?
 Invariant - each node of the splay tree holds log(size of subtree) coins.   
