@@ -32,3 +32,57 @@ Called DFS because it explores G by going as deeply as possible and then retreat
 Similiar to maze finding. 
   
 BOTH TAKE O(N + m) time because they ahve to check all edges and all nodes! 
+
+
+# Applications of BFS
+## Bipartititeness 
+A graph G is bipartite if vertex set can be partitioned into sets X and Y (two different colors) so every edge of G has one end in X and another end in Y.  
+* A triangle is not bipartite. Bipartite iff there is no cycle (triangle) so these are also called odd cycles. if there is an odd cycle, not bipartite.
+  
+##### Algorithm
+Take any node i, mark it colored 0, then check all the neightbors and they must be colored 1. then alternate betweeen colors. Do need to check if marked correctly so it runs
+O(m+n) time so checks all nodes and edges!  
+
+## Biconnectivity
+Tree is minimally connected graph. and can be disconnected with just one node removed.  
+
+A graph is biconnected if you must delete two nodes and edges to disconnect G. There is no single node whose removal disconnects G. 
+  
+__Articulation point__ - a node whose removal disconnects G. Thus, G is biconnected iff there is no articulation point. 
+  
+Originally this algorithm is O(n* (n+m)), but there is algorithm to be O(n+m). The naive alogirhtm is to remove each vertex v in turn, check if C(v) is connected. Like testing eveything
+  
+Better alogrithm- keep track of   
+Num(v) = visit order number of v in graph.  
+low(v) = is the lowest/smallest num vertex reachable from v by taking zero or more DFS edges plus at most one back edge.
+```
+low(v) = min (num(v), 
+lowest num(v) of all back edges (v,w)
+smallest low (w) of all children of v
+)
+```
+  
+Do a BFS now and label all points with those special values. Then check that tree. a node is an articulation point if  
+- v is the root and the root has more than one child
+- v is not the root but has a child such that low(w) >= num(v).
+  - If there is a child unable to reach a node higher than v. 
+
+The sharing points of connected components are articulation points.  
+
+## Toplogical Sorting
+If graph is undirected without cycles, it is a tree.  
+
+A undirected graph with no cycle is a tree.  
+
+A directed graph, no directed cycled it can have max choose 2 edges.   
+
+__Directed Acyclic Graph (DAG)__  - has no cycle, directed.  
+
+Toplogical ordering is order G such that every edge is pointing from smaller index to a larger index.  
+  
+If G is topological ordering then G is a DAG. vice versa. (toplogical ordering iff G is DAG).  
+A cycle cannot be a DAG because it will look for smallest number (property of DAG), but there will always be something pointing to the smallest number if it is a cycle.
+  
+##### Algorithm
+Every DAG has a vertex with no incoming edge. If a graph doesnt start with a node of zero incoming edges, it is not a DAG.  
+Need to keep track of the number of incoming edges for each node in the graph. then start with one of zero incoming edges, and reduce the incoming edge count by one for all surrounding nodes. continue until no more nodes, and every new node you encounter should have zero incoming nodes after the next iteration. 
