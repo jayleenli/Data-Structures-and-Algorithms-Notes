@@ -33,7 +33,9 @@ Similiar to maze finding.
   
 BOTH TAKE O(N + m) time because they ahve to check all edges and all nodes! 
 
-
+https://visualgo.net/en/dfsbfs  
+Good Link for visualization for DFS and BFS.   
+  
 # Applications of BFS
 ## Bipartititeness 
 A graph G is bipartite if vertex set can be partitioned into sets X and Y (two different colors) so every edge of G has one end in X and another end in Y.  
@@ -86,3 +88,36 @@ A cycle cannot be a DAG because it will look for smallest number (property of DA
 ##### Algorithm
 Every DAG has a vertex with no incoming edge. If a graph doesnt start with a node of zero incoming edges, it is not a DAG.  
 Need to keep track of the number of incoming edges for each node in the graph. then start with one of zero incoming edges, and reduce the incoming edge count by one for all surrounding nodes. continue until no more nodes, and every new node you encounter should have zero incoming nodes after the next iteration. 
+
+## Strongly Connected Component (SCC)
+1. Do the DFS algorithm on it.
+2. Number the vertices in the post-order, namely, the order in which their recursive
+calls finish.
+	* The reverse order is from the last to finish recursive calls to the first to finish recursive calls. 
+3. Construct the reverse graph R, in which each edge has the opposite orientation
+than G.
+4. Perform a second DFS on R, always starting at the highest numbered vertex in
+our reverse ordering, and output each subtree found by this DFS as a SCC, and remove
+it from the graph. They will return groups if not everything is SCC. For example, if there is no out edges at the node being checked, that means it is the end of that SCC. so group that one and continue groups based on the reverse order. 
+  
+##### Proof of Correctness why this works
+To show that each tree found during the second DFS (on R) is a strongly connected component, we will demonstrate the following:   
+Suppose T is a tree, with root node x, found by the DFS in R, and v is a node in T. Then, the original graph G contains both a directed path from x to v, and a directed path from v
+to x.
+  
+If v and w are two nodes in T, then we can reach w from v by
+following the path v to the root x plus path from x to w, and vice versa.
+  
+To prove the first path that G contains a path from v to x, we note the following. The
+node v is a descendant of x in T, which means there is a directed path from x to v in
+R. Since each edge of R is the reverse of its copy in G, this path corresponds to a
+v to x path in G.
+  
+We now prove the converse that G also contains a path from x to v.
+- Since x is the root of T, it means that x finished after v in the
+first DFS.
+- Therefore, during that DFS in G, the recursive call at v finished before the recursive call at x finished.
+- Since we have already shown a v to x path in G, it must be that v is a descendant
+of x in the DFS of G—otherwise, v would finish after x.  
+
+Therefore, there is a path from x to v, and the proof is complete.
