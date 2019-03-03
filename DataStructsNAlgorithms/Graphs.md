@@ -121,3 +121,19 @@ first DFS.
 of x in the DFS of G—otherwise, v would finish after x.  
 
 Therefore, there is a path from x to v, and the proof is complete.
+   
+__This is the way the book says to do it__
+To prove that this algorithm works, we must show that if two vertices v and w are
+in the same depth-first spanning tree of R, there must be paths from v to w and from w
+to v. Equivalently, we can show that if x is the root of the depth-first spanning tree of Gr
+containing v, then there is a path from x to v and from v to x. Applying the same logic to w
+would then give a path from x to w and from w to x. These paths would imply paths from
+v to w and w to v (going through x).  
+
+Since v is a descendant of x in R’s depth-first spanning tree, there is a path from x to
+v in R and thus a path from v to x in G. Furthermore, since x is the root, x has the higher
+postorder number from the first depth-first search. Therefore, during the first depth-first
+search, all the work processing v was completed before the work at x was completed. Since
+there is a path from v to x, it follows that v must be a descendant of x in the spanning tree
+for G—otherwise v would finish after x. This implies a path from x to v in G and completes
+the proof.
