@@ -137,3 +137,28 @@ search, all the work processing v was completed before the work at x was complet
 there is a path from v to x, it follows that v must be a descendant of x in the spanning tree
 for G—otherwise v would finish after x. This implies a path from x to v in G and completes
 the proof.
+  
+## Minimum Spanning Tree (MST)
+Used to find the smallest cost of graph traversal. its the subset of edges that forms a spanning tree of min total cost.  
+  
+Spanning - contains all the nodes. minimum because you wan't to be "greedy" and be cheap, take the least cost for yourself.   
+__Cayley's proof__ - There are n^(n-2) spanning trees that can be made of n nodes. 
+  
+##### Kruskal's Algorithm
+First must assume all edge costs are distinct. Sort all the edges in ascending order of cost. Processing edges in that order. Then add next cheapest edge to a tree T that starts at 0 as long as it doesn't create a cycle.  
+```
+for i = 1 to n-1
+ add the cheapest edge that doesn’t create a cycle
+
+```
+Once all the nodes are connected, we can disregard everything else. Cuz its not gonna add it anyway.  
+  
+This algorithm is not nesscarily good, because being greedy may force later more expensive choices. That might mess up our MST. 
+  
+
+Proof why this works. Detecting a cycle is actually a union find problem. Suppose there is a cycle in input. Say one edge in cycle is most expensive. Then this edge does not belong to the tree.  
+  
+Cost (mlogn), because union find is O(m a(n))  
+or O(ElogV). E = edge, v = vertices.  
+  
+The # of edges of min spanning tree is vertices - 1. 
