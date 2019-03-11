@@ -11,7 +11,7 @@ __Running time__
 O(N^2) without binary heap  
 ```
 (n-1)n + |E|Sum(deg(v)) = 2|E| <------------also = deg(v) cuz take in account 
-  ^				^							the undirected graph has 2 direction
+  ^				^					the undirected graph has 2 direction
   ^				^
   ^				^-------------------|E| decrese keys. deg(v) is the # of neighbors
   ^
