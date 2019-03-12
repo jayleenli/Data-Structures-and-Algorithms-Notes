@@ -41,12 +41,14 @@ n* sum 1/2^i for all i = 0 to k-1.
 sum 1/s^i is actually a geometric series that will be <2n. so its O(n)!  
   
 ### Accounting Method
-Basically come up with artifical cost for operations (amortized cost). if cost < actual, use as saving, if cost > actual, then owed for next operation.  
+Basically come up with artifical cost for operations (amortized cost).  
+if cost < actual, use as saving  
+if cost > actual, then owed for next operation.  
 Just gotta make sure the sum of Ci hat is enough to cover the actual cost!  
   
 For Stack  
 ```
-		Actual    Amortized
+	Actual    Amortized
 Push |     1    |   2
 Pop  |     1    |   0
 Multipop|  K    |   0
