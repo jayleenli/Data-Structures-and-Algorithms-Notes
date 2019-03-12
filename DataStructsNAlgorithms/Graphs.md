@@ -14,7 +14,7 @@ An undirected graph is connected if there is a path between any two vertices. A 
 Trees: an undirected graph is a tree if it is connected and does not contain a cycle.
 
 ## Graph Connectivity
-To solve the traverrsal problem, we need a way to find the connectivity of the graph in some way. This is also known as the maze problem. But usually with these approaches if there is no exit, we will be in an infinite loop.
+To solve the traversal problem, we need a way to find the connectivity of the graph in some way. This is also known as the maze problem because you are looking for an exist given some start node. But usually with these approaches if there is no exit, we will be in an infinite loop.
   
 #### Breath First Search
 Simple algorithm for st-connectivity. Start at s and explore outward in all possible directions. To make sure we don't get stuck in a loop. use markers to keep track of nodes that have been visited.   
@@ -30,6 +30,12 @@ Proof by Contradiction: assume i < j-1. When x is scanned in layer i, the edge (
 Starting at s, we take hte first edge out of s, and continue recursively until we reach a dead end. a node for which all neighbors have already been explored. Then backtrack until get a node with at least one explored neighbor.  
 Called DFS because it explores G by going as deeply as possible and then retreating when necessary.  
 Similiar to maze finding. 
+  
+• Fact 1. For a recursive call DFS(u), all nodes that are marked explored between the invocation and the end of the recursive call are descendants of u in T.  
+• Fact 2. Let T be a DFS tree, let x, y be two nodes in T that have an edge between them in G, but (x, y) is not an edge of T. Then, one of x or y is an ancestor of the other.  
+• Suppose not, and assume that x is reached first in DFS. When the edge (x, y) is examined during the execution of DF S(x), it is not added to T because y is marked Explored. Since y was not marked Explored when DF S(x) was first invoked, it must have been discovered during the recursive call. Thus, by Fact 1, y must be a descendant
+of x.   
+Connected Components Fact. For any two nodes s and t in G, their conencted components are either identical or disjoint.  
   
 BOTH TAKE O(N + m) time because they ahve to check all edges and all nodes! 
 
