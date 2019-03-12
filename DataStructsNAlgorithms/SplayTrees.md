@@ -95,7 +95,8 @@ T1   P    rightRotate(P)  T1   X     leftRotate(P)    G     P
 
 #### Insert(x) O(logN)
 * just insert normally as bst. then splay that key back to the root. 
-
+* Other way that is done (done in class) is split(x,t) and replace t with new tree of new root node with i in it. Whose left and right subtree are t1 and t2 from split.  
+  
 #### Delete (x,t) O(logN)
 * call access (x,t) first, if its not found, the tree just gets restructed. 
 * if it is found, it splayed with x as the root
