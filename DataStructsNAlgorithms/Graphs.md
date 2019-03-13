@@ -45,7 +45,7 @@ Good Link for visualization for DFS and BFS.
 # Applications of BFS
 ## Bipartititeness 
 A graph G is bipartite if vertex set can be partitioned into sets X and Y (two different colors) so every edge of G has one end in X and another end in Y.  
-* A triangle is not bipartite. Bipartite iff there is no cycle (triangle) so these are also called odd cycles. if there is an odd cycle, not bipartite.
+* A triangle is not bipartite. Bipartite iff there is no ODD cycle (like triangle). if there is an odd cycle, not bipartite.
   
 ##### Algorithm
 Take any node i, mark it colored 0, then check all the neightbors and they must be colored 1. then alternate betweeen colors. Do need to check if marked correctly so it runs
@@ -67,7 +67,6 @@ low(v) = is the lowest/smallest num vertex reachable from v by taking zero or mo
 low(v) = min (num(v), 
 lowest num(v) of all back edges (v,w)
 smallest low (w) of all children of v
-)
 ```
   
 Do a BFS now and label all points with those special values. Then check that tree. a node is an articulation point if  
@@ -89,10 +88,27 @@ __Directed Acyclic Graph (DAG)__  - has no cycle, directed.
 Toplogical ordering is order G such that every edge is pointing from smaller index to a larger index.  
   
 If G is topological ordering then G is a DAG. vice versa. (toplogical ordering iff G is DAG).  
+```
+Proof. By contradiction. Suppose G has a topo ordering v1, v2, . . . , vn, but also a cycle
+Let vi be the lowest-indexed node in C, and let vj be the node just before vi, so (vj, vi) is an edge of G. But by our choice of i, we have that j > i, which contradicts
+the assumption that v1, v2, . . . , vn is a topological ordering.
+```
 A cycle cannot be a DAG because it will look for smallest number (property of DAG), but there will always be something pointing to the smallest number if it is a cycle.
   
 ##### Algorithm
-Every DAG has a vertex with no incoming edge. If a graph doesnt start with a node of zero incoming edges, it is not a DAG.  
+```
+Find vertex w/ zero incoming edges (must exist! Proof why below)
+print v, delete vm and its outgoing edges
+repeat
+```
+Every DAG has a vertex with no incoming edge. If a graph doesnt start with a node of zero incoming edges, it is not a DAG.   
+``` 
+Proof for that^:
+Claim: If G has a topo ordering, then G is a DAG
+Contradiction: Say G has a topological ordering v1, v2...vn but also a cycle C
+Say vi is the lowest index node in cycle C. vj is node just before, so (vj,vi) is an edge
+but now j>i, which contradicts our topoloical ordering
+```
 Need to keep track of the number of incoming edges for each node in the graph. then start with one of zero incoming edges, and reduce the incoming edge count by one for all surrounding nodes. continue until no more nodes, and every new node you encounter should have zero incoming nodes after the next iteration. 
 
 ## Strongly Connected Component (SCC)
