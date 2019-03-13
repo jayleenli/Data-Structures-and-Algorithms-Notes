@@ -4,9 +4,11 @@
 Used to find the smallest cost of graph traversal. its the subset of edges that forms a spanning tree of min total cost.  
   
 Spanning - contains all the nodes. minimum because you wan't to be "greedy" and be cheap, take the least cost for yourself.   
-__Cayley's proof__ - There are n^(n-2) spanning trees that can be made of n nodes. 
+__Cayley's proof__ - There are n^(n-2) spanning trees that can be made of n nodes.  
   
-##### Kruskal's Algorithm
+The # of edges of min spanning tree is vertices - 1. 
+  
+## Kruskal's Algorithm
 First must assume all edge costs are distinct. Sort all the edges in ascending order of cost. Processing edges in that order. Then add next cheapest edge to a tree T that starts at 0 as long as it doesn't create a cycle.  
 ```
 for i = 1 to n-1
@@ -20,18 +22,14 @@ This algorithm is not nesscarily good, because being greedy may force later more
 
 Proof why this works. Detecting a cycle is actually a union find problem. Suppose there is a cycle in input. Say one edge in cycle is most expensive. Then this edge does not belong to the tree.  
   
-Cost (mlogn), because union find is O(m a(n))  
-or O(ElogV). E = edge, v = vertices.  
+Cost O(ElogV), because union find is O(m a(n)) and other heap operations are O(logN), and the operations get absorbed into it. Since |E| = O(|V|^2), this makes the running time O(|E|log|V|). E = edge, v = vertices.  
   
-The # of edges of min spanning tree is vertices - 1. 
-
 ## Prim's Algorithm
 Grows the tree in successive stages, and is similiar to Djisktra's algorithm.  
 There is a set of vertices in tree of our shortest path, and there is a set that is not in the tree.  
 - find new vertex to add to the tree by choosing the edge (u,v) such that the cost of (u,v) is smallest among all edges where u is in the tree and v is not in the tree.
 - Each step will add a vertex to the tree.  
   
-
 __Running time__   
 O(N^2) without binary heap  
 ```
