@@ -1,7 +1,9 @@
 # Splay Trees
 Why Use vs AVL trees?   
 AVL trees have too many cases and also needs extra memory to store the height data in each node.   
-Also using Splay tree gives rise to these functions, insert, delete, find, split, join.
+Also using Splay tree gives rise to these functions, insert, delete, find, split, join.  
+In addition, splay tree guarantee better performance over a long sequence of operations. this is why it guantees for O(nlogn). But a single operation could take O(n). The reason for the better performance over time is because of the splay heuristic that relies on the idea of caching- things that were accessed recently are likely to be accessed again.   
+AVL trees guarentee that the shape is always logn, but advantage for splay is faster look up time.  
 
 ###### Properties
 * splay at node of depth d takes O(d) time.
