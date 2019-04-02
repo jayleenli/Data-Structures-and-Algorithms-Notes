@@ -18,3 +18,19 @@ From this graph you can see that if the log/ln of something is between 0 and 1 (
   
 
 ![Integration by parts](https://www.onlinemathlearning.com/image-files/xintegration-by-parts.png.pagespeed.ic.0c0nnlkplW.webp)
+
+## Calculus Rules
+![arcsinx](http://www-math.mit.edu/~djk/18_01/chapter22/equations/section01_eq02.gif)  
+  
+## Linear Algebra Rules
+##### Vector operations. (not matrix!)
+Dot product (scalar singular value)   
+(x,y,z) dot (a,b,c) = ax+by+cz
+  
+Cross Product (returns a vector)  
+(x,y,z) x (a,b,c) = (yc-bz, az-xc, bx-ay)  
+Property: vxw = -(wxv)
+  
+Determinant:  
+[a b]  
+[c d]       is ad-bc
