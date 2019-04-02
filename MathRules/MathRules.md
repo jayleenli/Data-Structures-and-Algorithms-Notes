@@ -20,7 +20,9 @@ From this graph you can see that if the log/ln of something is between 0 and 1 (
 ![Integration by parts](https://www.onlinemathlearning.com/image-files/xintegration-by-parts.png.pagespeed.ic.0c0nnlkplW.webp)
 
 ## Calculus Rules
-![arcsinx](http://www-math.mit.edu/~djk/18_01/chapter22/equations/section01_eq02.gif)  
+![arcsinx](http://www-math.mit.edu/~djk/18_01/chapter22/equations/section01_eq02.gif) 
+  
+![simple integration rules](https://github.com/jayleenli/Data-Structures-and-Algorithms-Notes/blob/master/MathRules/simpleintegration.JPG)  
   
 ## Linear Algebra Rules
 ##### Vector operations. (not matrix!)
