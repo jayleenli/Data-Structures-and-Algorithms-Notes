@@ -24,6 +24,8 @@ From this graph you can see that if the log/ln of something is between 0 and 1 (
 
 ![trig function integrals](http://www-math.mit.edu/~djk/18_01/chapter21/equations/section03_eq01.gif)  
     
+![trig function derivatives](http://2.bp.blogspot.com/-KI4DxcMwZxk/VP4-J6UE06I/AAAAAAAAAAs/ErnXkMLtBk8/s1600/f821abf7541a4b5e6613271d11bffb12.png)  
+  
 ![simple integration rules](https://github.com/jayleenli/Data-Structures-and-Algorithms-Notes/blob/master/MathRules/simpleintegration.JPG)  
   
 ## Linear Algebra Rules
