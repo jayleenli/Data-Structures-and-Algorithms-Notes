@@ -21,7 +21,9 @@ From this graph you can see that if the log/ln of something is between 0 and 1 (
 
 ## Calculus Rules
 ![arcsinx](http://www-math.mit.edu/~djk/18_01/chapter22/equations/section01_eq02.gif) 
-  
+
+![trig function integrals](http://www-math.mit.edu/~djk/18_01/chapter21/equations/section03_eq01.gif)  
+    
 ![simple integration rules](https://github.com/jayleenli/Data-Structures-and-Algorithms-Notes/blob/master/MathRules/simpleintegration.JPG)  
   
 ## Linear Algebra Rules
